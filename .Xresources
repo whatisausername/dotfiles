@@ -1,0 +1,93 @@
+! More Konsole/Yakuake-like keybindings:
+*VT100.Translations: #override \
+Shift <Key>Up: scroll-back(1) \n\
+Shift <Key>Down: scroll-forw(1) \n\
+~Meta Shift Ctrl <Key>V: insert-selection(CLIPBOARD) \n\
+Meta Shift Ctrl <Key>V: insert-selection(PRIMARY) \n\
+~Shift <Btn1Up>: select-end(PRIMARY, CUT_BUFFER0) \n\
+Shift <Btn1Up>: select-end(CLIPBOARD, CUT_BUFFER1) \n\
+~Shift ~Ctrl ~Meta <Btn2Up>:insert-selection(PRIMARY, CUT_BUFFER0) \n\
+Shift ~Ctrl ~Meta <Btn2Up>:insert-selection(CLIPBOARD, CUT_BUFFER1)
+
+#urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp' >> ~/.Xresources
+URxvt.scrollBar: false
+URxvt.font: xft:dejavu sans mono:size=8
+URxvt.boldFont: xft:ubuntu mono:size=10
+URxvt.letterSpace: -1
+#URxvt.font: xft:monte carlo fixed 12:size=8:antialias=true
+#URxvt*loginShell: true
+#$ urxvt -geometry 80x3 -name 'bashrun' -e sh -c "/bin/bash -i -t"
+#URxvt.geometry: 67x30+9+591
+URxvt.perl-ext-common: default,clipboard
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!urxvt.depth: 32
+!urxvt.background: [75]#1b1b1b
+
+xterm*termName: xterm
+XTerm*background:		#1b1b1b
+XTerm*foreground:		#9e6ffe
+
+URxvt.background:               #1b1b1b
+!URxvt.foreground:               #8292B2
+!URxvt.foreground:               #CCFFFF
+!URxvt.foreground:	#93c9ff
+URxvt.foreground:	#899ca1
+!URxvt.colorBD:                  #CFCFCF
+!URxvt.colorUL:                  #969696
+URxvt.colorIT:                  #686868
+
+! BLK
+URxvt.color0: #545350
+URxvt.color8: #96969A
+
+! WHT
+URxvt.color7: #CFCFD3
+URxvt.color15: #FEFFFF
+
+! RED
+URxvt.color1: #CC827B
+URxvt.color9: #FFBBB3
+
+! YEL
+URxvt.color3: #A5955B
+URxvt.color11: #E0CE91
+
+! GRN
+URxvt.color2: #67A477
+URxvt.color10: #9EDEAE
+
+! CYN
+URxvt.color6: #38A6B2
+URxvt.color14: #79E0ED
+
+! BLU
+URxvt.color4: #7998D1
+URxvt.color12: #B3D1FF
+
+! MAG
+URxvt.color5: #BD84B6
+URxvt.color13: #F9BDF0
+
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   argb:00000000, #79e0ed, argb:11FFFFFF, #79e0ed,#333
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:00000000, #f99, argb:11FFFFFF, #f99,#333
+! Color scheme for active row
+rofi.color-active:                   argb:00000000, #aa1, argb:11FFFFFF, #aa1,#333
+! Color scheme window
+rofi.color-window:                   argb:ee333333, #79e0ed,#79e0ed
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+rofi.font: NotoSans 12
+rofi.opacity: 85
+rofi.location: 2
+rofi.yoffset: 20
+rofi.width: 1915
+rofi.lines: 10
+
+URxvt*iconFile:            /usr/share/icons/Numix-Circle/scalable/apps/Terminal.svg
+Xft.lcdfilter: lcddefault
